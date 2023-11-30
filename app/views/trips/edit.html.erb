@@ -1,0 +1,36 @@
+<!-- app/views/trips/edit.html.erb -->
+<h1>Modifier le voyage</h1>
+
+<%= form_with(model: @trip, local: true) do |form| %>
+    <%= form.hidden_field :id %>
+  <div class="field">
+    <%= form.label :destination %>
+    <%= form.text_field :destination %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :start_date %>
+    <%= form.text_field :start_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :end_date %>
+    <%= form.text_field :end_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.collection_select :user_id, User.all, :id, :name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Enregistrer les modifications" %>
+  </div>
+<% end %>
+
+<%= link_to 'Retour', trips_path %>

@@ -1,0 +1,43 @@
+<!-- app/views/trips/_form.html.erb -->
+<%= form_with(model: @trip, local: true) do |form| %>
+  <% if @trip.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@trip.errors.count, "erreur") %> ont empêché la sauvegarde de ce voyage :</h2>
+
+      <ul>
+        <% @trip.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :destination %>
+    <%= form.text_field :destination %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :start_date %>
+    <%= form.text_field :start_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :end_date %>
+    <%= form.text_field :end_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.collection_select :user_id, User.all, :id, :name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Créer le voyage" %>
+  </div>
+<% end %>

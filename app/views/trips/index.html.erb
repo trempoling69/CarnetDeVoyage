@@ -1,0 +1,41 @@
+<table>
+    <thead>
+        <tr>
+            <th>Destination</th>
+            <th>Description</th>
+            <th>Début</th>
+            <th>Fin</th>
+            <th>User associé</th>
+            <th>Edit</th>
+            <th>Supprimer</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @trips.each do |trip| %>
+        <tr>
+            <th>
+                <%= trip.destination %>
+            </th>
+            <th>
+                <%= trip.description %>
+            </th>
+            <th>
+                <%= trip.start_date %>
+            </th>
+            <th>
+                <%= trip.end_date %>
+            </th>
+            <th>
+                <%= trip.user.id %>
+            </th>
+            <th>
+                <%= link_to 'Modifier', edit_trip_path(trip) %>
+            </th>
+            <th>
+                <%= button_to 'Delete', trip_path(trip), :method => :delete %>
+            </th>
+
+        </tr>
+    </tbody>
+    <% end %>
+</table>
