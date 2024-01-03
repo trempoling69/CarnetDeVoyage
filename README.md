@@ -329,12 +329,12 @@ end
 </div>
 ```
 
-* Ajouter la route dans _config/routes.rb
+* Ajouter la route dans _config/routes.rb_
 ```ruby
   root to: 'main#index'
 ```
 
-* Styliser en ajouter le css dans _app/assets/stylesheets/application.css_ et en l'important dans le fichier _views/layouts/application.html.erb
+* Styliser en ajouter le css dans _app/assets/stylesheets/application.css_ et en l'important dans le fichier _views/layouts/application.html.erb_
 ```erb
  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
 ```
