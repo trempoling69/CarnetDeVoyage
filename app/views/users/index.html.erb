@@ -1,5 +1,18 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
-<% @users.each do |user| %>
-    Name: <%= user.name %><br />
-<% end %>
+<h1>Users</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @users.each do |user| %>
+            <td><%= user.name %></td>
+            <td><%= user.email %></td>
+        <% end %>
+    </tbody>
+</table>
+<div class="return">
+    <%= button_to "Retourner à l'accueil", root_path, method: :get, class: 'button-17' %>
+</div>

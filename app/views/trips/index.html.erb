@@ -6,6 +6,7 @@
             <th>Début</th>
             <th>Fin</th>
             <th>User associé</th>
+            <th>Voir</th>
             <th>Edit</th>
             <th>Supprimer</th>
         </tr>
@@ -29,6 +30,9 @@
                 <%= trip.user.id %>
             </th>
             <th>
+                <%= link_to 'Voir', trip_path(trip) %>
+            </th>
+            <th>
                 <%= link_to 'Modifier', edit_trip_path(trip) %>
             </th>
             <th>
@@ -39,3 +43,6 @@
     </tbody>
     <% end %>
 </table>
+<div class="return">
+    <%= button_to "Retourner à l'accueil", root_path, method: :get, class: 'button-17' %>
+</div>

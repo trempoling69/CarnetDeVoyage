@@ -308,3 +308,33 @@ get '/trips', to: 'trips#index'
 ```
 * Il ne reste plus qu'a aller sur /trips/new pour voir le form et la view et enregistrer un nouveau trip
 
+
+### Créer la page d'accueil
+
+* Créer le controller qui permet d'afficher la page d'accueil _main_controller.rb_
+```ruby
+class MainController < ApplicationController
+    def index
+    end
+end
+```
+
+* Créer la vue associé dans _view/main/index.html.erb_
+```erb
+<div class="main_container">
+  <h1>Bienvenue sur le carnet de voyage</h1>
+  <%= button_to 'Aller vers la page des voyages', trips_path, method: :get, class: 'button-17' %>
+  <%= button_to 'Créer un voyage', new_trip_path, method: :get, class: 'button-17' %>
+  <%= button_to 'Aller vers la page des users', users_path, method: :get, class: 'button-17' %>
+</div>
+```
+
+* Ajouter la route dans _config/routes.rb
+```ruby
+  root to: 'main#index'
+```
+
+* Styliser en ajouter le css dans _app/assets/stylesheets/application.css_ et en l'important dans le fichier _views/layouts/application.html.erb
+```erb
+ <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+```

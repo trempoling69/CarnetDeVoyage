@@ -35,8 +35,11 @@
                 <th>
                     <%= button_to 'Delete', trip_path(@trip), :method => :delete %>
                 </th>
-                  
+                
             </tr>
         </tbody>
     </table>
+</div>
+<div class="return">
+    <%= button_to "Retourner à l'accueil", root_path, method: :get, class: 'button-17' %>
 </div>

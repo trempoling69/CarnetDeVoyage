@@ -38,6 +38,9 @@
   </div>
 
   <div class="actions">
-    <%= form.submit "Créer le voyage" %>
+    <%= form.submit "Créer le voyage", class: 'button-17' %>
   </div>
 <% end %>
+<div class="return">
+  <%= button_to "Retourner à l'accueil", root_path, method: :get, class: 'button-17' %>
+</div>
